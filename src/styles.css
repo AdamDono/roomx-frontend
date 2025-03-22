@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+/* Add padding to the body to prevent content from overlapping the fixed navbar */
+body {
+    padding-top: 80px; /* Adjust this value based on your navbar height */
+  }
+  
+  /* Ensure the routed components are pushed down by the navbar height */
+  router-outlet + * {
+    margin-top: 80px; /* Adjust this value based on your navbar height */
+  }
