@@ -1,9 +1,8 @@
 <header class="absolute inset-x-0 top-0 z-50">
     <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
       <div class="flex lg:flex-1">
-        <a href="#" class="-m-1.5 p-1.5">
-<h1>RoomX</h1>
-  <!--  <img class="h-8 w-auto" src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600" alt=""> -->
+        <a routerLink="/" class="-m-1.5 p-1.5">
+          <h1 class="text-xl font-bold text-gray-900">RoomX</h1>
         </a>
       </div>
       <div class="flex lg:hidden">
@@ -11,6 +10,8 @@
           type="button"
           class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
           (click)="toggleMenu()"
+          aria-expanded="false"
+          [attr.aria-expanded]="isMenuOpen"
         >
           <span class="sr-only">Open main menu</span>
           <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
@@ -19,11 +20,11 @@
         </button>
       </div>
       <div class="hidden lg:flex lg:gap-x-12">
-        <a href="#" class="text-sm/6 font-semibold text-gray-900">Listings</a>
-        <a href="#" class="text-sm/6 font-semibold text-gray-900">Dashboard</a>
+        <a routerLink="/listings" class="text-sm/6 font-semibold text-gray-900">Listings</a>
+        <a routerLink="/dashboard" class="text-sm/6 font-semibold text-gray-900">Dashboard</a>
       </div>
       <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-        <a href="#" class="text-sm/6 font-semibold text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>
+        <a routerLink="/login" class="text-sm/6 font-semibold text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>
       </div>
     </nav>
   
@@ -32,14 +33,14 @@
       <div class="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm" aria-hidden="true"></div>
       <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
         <div class="flex items-center justify-between">
-          <a href="#" class="-m-1.5 p-1.5">
-           <H1>Roomx</H1>
-           <!--   <img class="h-8 w-auto" src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600" alt="">  -->
+          <a routerLink="/" class="-m-1.5 p-1.5">
+            <h1 class="text-xl font-bold text-gray-900">RoomX</h1>
           </a>
           <button
             type="button"
             class="-m-2.5 rounded-md p-2.5 text-gray-700"
             (click)="closeMenu()"
+            aria-label="Close menu"
           >
             <span class="sr-only">Close menu</span>
             <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
@@ -50,11 +51,29 @@
         <div class="mt-6 flow-root">
           <div class="-my-6 divide-y divide-gray-500/10">
             <div class="space-y-2 py-6">
-              <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Dashboard</a>
-              <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Listings</a>
+              <a
+                routerLink="/dashboard"
+                class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                (click)="closeMenu()"
+              >
+                Dashboard
+              </a>
+              <a
+                routerLink="/listings"
+                class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                (click)="closeMenu()"
+              >
+                Listings
+              </a>
             </div>
             <div class="py-6">
-              <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Log in</a>
+              <a
+                routerLink="/login"
+                class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                (click)="closeMenu()"
+              >
+                Log in
+              </a>
             </div>
           </div>
         </div>

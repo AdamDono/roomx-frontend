@@ -1,19 +1,21 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
-  imports: [],
+  standalone: true,
+  imports: [RouterLink], // Add RouterLink here
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.css'
+  styleUrl: './navbar.component.css',
 })
 export class NavbarComponent {
-  isMenuOpen = false; // Add this property
+  isMenuOpen = false;
 
   toggleMenu() {
-    this.isMenuOpen = !this.isMenuOpen; // Toggle the menu state
+    this.isMenuOpen = !this.isMenuOpen;
   }
 
   closeMenu() {
-    this.isMenuOpen = false; // Close the menu
+    this.isMenuOpen = false;
   }
 }
