@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../auth.service';
+import { FormsModule } from '@angular/forms'; // Add this import
 
 @Component({
   selector: 'app-signup',
+  imports: [FormsModule], // Add FormsModule here
   templateUrl: './signup.component.html',
 })
 export class SignupComponent {

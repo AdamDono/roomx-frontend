@@ -1,21 +1,22 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
-import { User } from '@angular/fire/auth';
+import { User } from '@angular/fire/auth'; // Use the correct User type
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  userData: User | null = null;
+  userData: User | null = null; // Use the correct User type
 
   constructor(private afAuth: AngularFireAuth, private router: Router) {
+    console.log('AuthService initialized');
     this.afAuth.authState.subscribe((user) => {
+      console.log('Auth state changed:', user);
       this.userData = user;
       localStorage.setItem('user', JSON.stringify(this.userData));
     });
   }
-
   // Sign up with email/password
   async signUp(email: string, password: string, role: string) {
     try {

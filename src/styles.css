@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Add padding to the body to prevent content from overlapping the fixed navbar */
 body {
     padding-top: 80px; /* Adjust this value based on your navbar height */
