@@ -5,12 +5,12 @@ import { getAuth, provideAuth } from '@angular/fire/auth';
 import { routes } from './app.routes';
 
 const firebaseConfig = {
-  apiKey: 'YOUR_API_KEY',
-  authDomain: 'YOUR_AUTH_DOMAIN',
-  projectId: 'YOUR_PROJECT_ID',
-  storageBucket: 'YOUR_STORAGE_BUCKET',
-  messagingSenderId: 'YOUR_MESSAGING_SENDER_ID',
-  appId: 'YOUR_APP_ID',
+  apiKey: 'AIzaSyCucVXZ8fPjy2wRqXQUySd5tb1bNfWaDFo',
+  authDomain: 'roomx-c2474.firebaseapp.com',
+  projectId: 'roomx-c2474',
+  storageBucket: 'roomx-c2474.appspot.com',
+  messagingSenderId: '325472960298',
+  appId: 'YOUR_APP_ID', // Replace with your Firebase App ID (if available)
 };
 
 export const appConfig: ApplicationConfig = {
