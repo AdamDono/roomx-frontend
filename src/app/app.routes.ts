@@ -7,8 +7,8 @@ import { ListingsComponent } from './listings/listings.component';
 
 export const routes: Routes = [
 { path: '', component: LandingPageComponent },
-{ path: 'dashboard', component: DashboardComponent },
-{ path: 'listings', component: ListingsComponent },
+{ path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+{ path: 'listings', component: ListingsComponent, canActivate: [AuthGuard] },
 { path: '**', redirectTo: '' },
 
 ];
