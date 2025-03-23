@@ -1,1 +1,6 @@
-<p>dashboard works!</p>
+<div *ngIf="user">
+    <h1>Welcome, {{ user.name }}!</h1>
+    <p>Email: {{ user.email }}</p>
+    <p>Role: {{ user.role }}</p>
+    <button (click)="logout()">Log Out</button>
+  </div>
