@@ -75,6 +75,10 @@
                 Log in
               </a>
             </div>
+            <div *ngIf="authService.isLoggedIn">
+                <img [src]="authService.userData?.photoURL || 'default-avatar.png'" alt="Profile" class="profile-image">
+                <button (click)="authService.logOut()">Log Out</button>
+              </div>
           </div>
         </div>
       </div>
