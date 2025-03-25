@@ -6,7 +6,7 @@ import { ListingsComponent } from './listings/listings.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
-import { AuthInterceptor } from './auth.interceptor'; //
+
 
 
 export const routes: Routes = [

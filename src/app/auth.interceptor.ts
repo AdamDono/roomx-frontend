@@ -25,12 +25,19 @@ export class AuthInterceptor implements HttpInterceptor {
 }
 
 export const authInterceptor: HttpInterceptorFn = (req, next) => {
-  const token = localStorage.getItem('access_token');
+  // Safe localStorage access
+  let token: string | null = null;
+  try {
+    token = typeof window !== 'undefined' ? localStorage.getItem('access_token') : null;
+  } catch (e) {
+    console.warn('localStorage access error:', e);
+  }
+
   if (token) {
     req = req.clone({
       setHeaders: {
-        Authorization: `Bearer ${token}`,
-      },
+        Authorization: `Bearer ${token}`
+      }
     });
   }
   return next(req);

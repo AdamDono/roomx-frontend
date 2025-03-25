@@ -7,3 +7,13 @@ body {
   router-outlet + * {
     margin-top: 80px; /* Adjust this value based on your navbar height */
   }
+
+  .success-snackbar {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .error-snackbar {
+    background-color: #f44336;
+    color: white;
+  }
